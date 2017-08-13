@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
+var articles = {
+articleOne:{
     title: 'Article one | Preethi Ravi',
     heading: 'Atricle One',
     date: 'August 12,2017',
@@ -18,8 +19,34 @@ var articleOne={
             <p>
                 This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article.
             </p>`
+       };
+articleTwo:{
+    title: 'Article two | Preethi Ravi',
+    heading: 'Atricle Two',
+    date: 'August 12,2017',
+    content: `<p>
+                This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article.
+            </p>
+            <p>
+               This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second articl
+            </p>
+            <p>
+                This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second articl
+            </p>`
+        };
+articleThree:{
+    title: 'Article three | Preethi Ravi',
+    heading: 'Atricle Three',
+    date: 'August 12,2017',
+    content: `<p>
+                This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article.
+            </p>
+            <p>
+                This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article.            </p>
+            <p>
+                This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article.            </p>`
+         };
 };
-
 function createTemplate (data) {
     var title = data.title;
     var date = data.date;
@@ -59,7 +86,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req,res){
+app.get('/:articleName', function(req,res){
+    //articleName = article-One
+    //articles[articleName] = {} content object for article-One
+    var articleName = req.params.articleName;
    res.send(createTemplate(articleOne));
 });
 
