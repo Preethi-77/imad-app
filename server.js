@@ -19,7 +19,7 @@ articleOne:{
             <p>
                 This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article. This is the content of my first article.
             </p>`
-       };
+       },
 articleTwo:{
     title: 'Article two | Preethi Ravi',
     heading: 'Atricle Two',
@@ -33,7 +33,7 @@ articleTwo:{
             <p>
                 This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second article. This is the content of my second articl
             </p>`
-        };
+},
 articleThree:{
     title: 'Article three | Preethi Ravi',
     heading: 'Atricle Three',
@@ -45,7 +45,7 @@ articleThree:{
                 This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article.            </p>
             <p>
                 This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article. This is the content of my third article.            </p>`
-         };
+         },
 };
 function createTemplate (data) {
     var title = data.title;
